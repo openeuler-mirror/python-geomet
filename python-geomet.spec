@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:           python-geomet
 Version:        0.2.1.post1
-Release:        1
+Release:        2
 Summary:        GeoJSON <-> WKT/WKB conversion utilities
 License:        Apache-2.0
 URL:            https://github.com/geomet/geomet
@@ -35,7 +35,7 @@ Provides:       python3-geomet-doc
 Convert GeoJSON to WKT/WKB (Well-Known Text/Binary), and vice versa.
 
 %prep
-%autosetup -n geomet-0.2.1.post1 -S git
+%autosetup -n geomet-0.2.1.post1 -p1
 
 %build
 %py3_build
@@ -80,5 +80,8 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 0.2.1.post1-2
+- DESC: delete -S git from %autosetup
+
 * Tue Jul 13 2021 OpenStack_SIG <openstack@openeuler.org> - 0.2.1.post1-1
 - Package Spec generate
